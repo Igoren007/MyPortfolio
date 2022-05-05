@@ -1,4 +1,5 @@
 body {
+    margin: 0;
     background-color: #1f203a;
     color: white;
     font-family: 'Open Sans',sans-serif;
@@ -21,7 +22,7 @@ body {
 }
 .header_photo img {
   display: block;
-  height: 200px;
+  height: 250px;
 }
 
 .header_info {
