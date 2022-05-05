@@ -1,0 +1,124 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="header_wrap">
+                <div class="header_photo">
+                  <img src="{% static 'portfolio/images/d.jpg' %}" alt="photo">
+                </div>
+                <div class="header_info">
+                    <div class="header_title">{{ name }}</div>
+                    <div class="header_subtitle">{{ about_me }}</div>
+                    <div class="contacts">
+                      <div class="contacts_text">My contacts</div>
+                      <div class="contacts_links">
+                        <div class="contacts_link">
+                          <a href="https://github.com/Igoren007" target="_blank">
+                            <img src="{% static 'portfolio/images/github-icon.svg' %}" alt="github">
+                          </a>
+                        </div>
+                        <div class="contacts_link">
+                          <a href="">
+                            <img src="{% static 'portfolio/images/linkedin-icon.svg' %}" alt="linkedin">
+                          </a>
+                        </div>
+                        <div class="contacts_link">
+                          <a href="">
+                            <img src="{% static 'portfolio/images/telegram-icon.svg' %}" alt="telegram">
+                          </a>
+                        </div>
+                        <div class="contacts_link">
+                          <a href="mailto:igoren92@gmail.com">
+                            <img src="{% static 'portfolio/images/email.svg' %}" alt="email">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="skills">
+        <div class="container">
+            <div class="projects_title">My skills</div>
+            <ul class="skills_list">
+                {% for skill in skills %}
+                    <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="projects">
+        <div class="container">
+            <div class="projects_title">My projects</div>
+        <div class="projects_wrapper">
+
+              {% for project in projects %}
+                  <div class="project_item">
+                        <div class="project_title">{{ project.title }}</div>
+                        <div class="project_descr">{{ project.descr }}</div>
+                        <div class="link_wrap">
+                              <div class="project_link">
+                                  <a class="link_btn" href="{{ project.link_web }}" target="_blank">Open</a>
+                              </div>
+                              <div class="project_sourcecode">
+                                  <a class="link_btn" href="{{ project.link_source }}" target="_blank">Source code</a>
+                              </div>
+                        </div>
+                  </div>
+              {% endfor %}
+        </div>
+
+    </div>
+
+    <div class="experience">
+        <div class="container">
+            <div class="projects_title">My experience</div>
+        <div class="experience_wrap">
+            {% for company in companies %}
+                <div class="experience_title">{{ company}}</div>
+                <ul>
+                {% for resp in responsibilities %}
+                    {% if resp.company == company %}
+                        <li class="experience_item">{{ resp.responsibility}}</li>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+
+    <div class="education">
+        <div class="container">
+            <div class="projects_title">My education</div>
+        <div class="experience_wrap">
+          <div class="education_title">{{ university }}</div>
+          <div class="education_subtitle">{{ faculty }}</div>
+          <div class="education_subtitle">{{ speciality }}</div>
+          <div class="education_subtitle">{{ years }}</div>
+        </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="footer_text">Created by Igor Garmatenko 2022</div>
+        </div>
+    </div>
+    </div>
+
+</body>
+</html>
