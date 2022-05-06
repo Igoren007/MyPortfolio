@@ -8,7 +8,7 @@ from portfolio.models import Skills, ExperienceCompany, ExperienceItem, Project
 def index(request):
     title = 'Igor Garmatenko - Portfolio'
     name = 'Igor Garmatenko'
-    about_me = 'lorem a;sljd fas;kjda skjasl kdj asldkjsa lkdjaslkdj askldjask ldjalskjd fas;kjda skjasl kdj asldkjsa lkdjaslkdj askldjask ldjalskjd'
+    about_me = 'I am looking for a position as a back-end web developer. In recent years, I have worked as a system administrator. There is no commercial experience in development, but there is a technical background, a great desire to learn new things and develop. I took training courses on Stepik, Udemy, Coursera. You can see my pet projects below.'
     university = 'Donetsk National Technical University'
     faculty = 'Faculty of Computer Information Technologies and Automation'
     speciality = 'Speciality: Control systems and automation'
