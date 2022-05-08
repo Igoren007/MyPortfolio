@@ -31,3 +31,11 @@ class ExperienceCompany(models.Model):
 class ExperienceItem(models.Model):
     company = models.ForeignKey(ExperienceCompany, on_delete=models.CASCADE)
     responsibility = models.CharField(max_length=500)
+
+
+class CertificateImage(models.Model):
+    title = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='images')
+
+    def __str__(self):
+        return self.title

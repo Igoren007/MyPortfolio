@@ -6,7 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'portfolio/images/favicon-32x32.png' %}">
     <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <title>{{ title }}</title>
 </head>
 <body>
@@ -113,12 +115,26 @@
         </div>
     </div>
 
+    <div class="education">
+        <div class="container">
+            <div class="projects_title">My additional education</div>
+            <div class="сert_wrap">
+                {% for cert in certificates %}
+                    <img src="{{ cert.image.url }}" alt="certificate" class="cert_image">
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
     <div class="footer">
         <div class="container">
             <div class="footer_text">Created by Igor Garmatenko 2022</div>
         </div>
     </div>
     </div>
+
+
+    <script type="text/javascript" src="{% static 'portfolio/js/zoom_img.js' %}"></script>
 
 </body>
 </html>

@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-from portfolio.models import Skills, ExperienceCompany, ExperienceItem, Project
+from portfolio.models import Skills, ExperienceCompany, ExperienceItem, Project, CertificateImage
 
 
 def index(request):
@@ -18,6 +18,7 @@ def index(request):
     companies = ExperienceCompany.objects.all()
     responsibilities = ExperienceItem.objects.all()
     projects = Project.objects.all()
+    certificates  = CertificateImage.objects.all()
 
     context = {
         'title': title,
@@ -31,5 +32,6 @@ def index(request):
         'faculty': faculty,
         'speciality': speciality,
         'years': years,
+        'certificates': certificates
     }
     return render(request, 'portfolio/index.html', context=context)

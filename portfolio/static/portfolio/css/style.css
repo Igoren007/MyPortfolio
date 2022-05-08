@@ -36,8 +36,9 @@ width: 100%;
 }
 
 .header_subtitle {
-    font-weight: 700;
+    font-weight: 400;
     font-size: 18px;
+  font-style: oblique;
     word-wrap: break-word;
     padding: 0 30px 10px 30px;
 }
@@ -90,7 +91,7 @@ width: 100%;
 
   .projects_title {
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-align: left;
     padding: 10px 35px;
   }
@@ -194,6 +195,10 @@ width: 100%;
     list-style-type: '- ';
   }
 
+  .education {
+    margin-bottom: 20px;
+  }
+
   .education_title {
     padding: 10px 50px;
     font-size: 22px;
@@ -205,6 +210,54 @@ width: 100%;
     font-size: 16px;
     text-align: left;
   }
+
+.сert_wrap {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cert_image {
+	margin: 10px 15px;
+	cursor:zoom-in;
+    height: 150px;
+}
+
+.popup {
+	position: absolute;
+	height:100%;
+	width:100%;
+	top:0;
+	left:0;
+	display:none;
+	text-align:center;
+}
+
+.popup_bg {
+	background:rgba(0,0,0,0.3);
+	position:fixed;
+	z-index:1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: auto;
+    height: auto;
+}
+
+.popup_img {
+	position: fixed;
+	z-index:2;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	max-height: 90%;
+}
+
+.popup_img {
+  pointer-events: none;
+}
 
 .footer {
 
