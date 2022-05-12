@@ -39,3 +39,11 @@ class CertificateImage(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class MyInfo(models.Model):
+    key = models.CharField(max_length=50)
+    value = models.CharField(max_length=500)
+
+    def __str__(self):
+        return f'{self.key}: {self.value}'
