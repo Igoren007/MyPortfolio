@@ -6,7 +6,7 @@ class Project(models.Model):
     title = models.CharField(max_length=250)
     descr = models.CharField(max_length=700)
     link_source = models.CharField(max_length=250)
-    link_web = models.CharField(max_length=250)
+    link_web = models.CharField(max_length=250, blank=True)
 
     def __str__(self):
         return self.title
