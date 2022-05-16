@@ -3,7 +3,8 @@ import os
 import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-xzd6b0=a%dpmf5940cnj7&$_c!s-vr$0*-rf4xj6-u8&sjyrj*'
