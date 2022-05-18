@@ -76,7 +76,7 @@ DATABASES = {
         'NAME': 'myportfolio',
         'USER': 'admin',
         'PASSWORD': '123456',
-        'HOST': '192.168.0.102',
+        'HOST': '172.16.1.58',
         'PORT': '5432',
     }
 }
