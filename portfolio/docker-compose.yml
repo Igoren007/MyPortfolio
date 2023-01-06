@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: web-app
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+    ports:
+      - 80:8000
+
+  db:
+    image: postgres
+    volumes:
+      - data:/var/lib/postgresql/data/
+    restart: always
+    environment:
+      - POSTGRES_DB=portfolio
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=dbpostgres
+
+volumes:
+  data:

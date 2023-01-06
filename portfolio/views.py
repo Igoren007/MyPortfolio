@@ -8,7 +8,7 @@ from portfolio.models import Skills, ExperienceCompany, ExperienceItem, Project,
 def index(request):
 
     skills = Skills.objects.all()
-    companies = ExperienceCompany.objects.all()
+    companies = ExperienceCompany.objects.all().order_by("-id")
     responsibilities = ExperienceItem.objects.all()
     projects = Project.objects.all()
     certificates  = CertificateImage.objects.all()
