@@ -6,7 +6,7 @@ services:
       dockerfile: ./Dockerfile
     container_name: web-app
     env_file:
-      - ./.env
+      - ./.env_data
     depends_on:
       - db
     ports:
@@ -15,7 +15,7 @@ services:
   db:
     image: postgres
     volumes:
-      - data:/var/lib/postgresql/data/
+      - portfolio_db_new:/var/lib/postgresql/data/
     restart: always
     environment:
       - POSTGRES_DB=portfolio
@@ -23,4 +23,4 @@ services:
       - POSTGRES_PASSWORD=dbpostgres
 
 volumes:
-  data:
+  portfolio_db_new:
