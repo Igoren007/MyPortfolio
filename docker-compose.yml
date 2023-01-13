@@ -4,13 +4,24 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
+    command: gunicorn MyPortfolio.wsgi:application --bind 0.0.0.0:8000
     container_name: web-app
     env_file:
       - ./.env_data
     depends_on:
       - db
+#    ports:
+#      - 8000:8000
+    expose:
+      - 8000 
+
+  nginx:
+    build: ./nginx
     ports:
-      - 80:8000
+      - 1234:80
+    depends_on: 
+      - web
+
 
   db:
     image: postgres
